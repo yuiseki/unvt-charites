@@ -6,6 +6,9 @@ const config: PlaywrightTestConfig = {
   use: {
     browserName: 'chromium',
     headless: true,
+    launchOptions: {
+      args: ['--ignore-gpu-blocklist', '--enable-unsafe-swiftshader'],
+    },
   },
   workers: 1,
   webServer: [
