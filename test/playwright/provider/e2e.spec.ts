@@ -9,5 +9,5 @@ test('Charites Live Preview', async ({ page }) => {
   await page.waitForTimeout(1000)
   const title = await page.title()
   expect(title).toBe('Charites Live Preview')
-  expect(pageErrors).toMatchObject([])
+  expect(pageErrors).toEqual([])
 })
