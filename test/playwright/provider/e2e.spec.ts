@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test/index.mjs'
+import { test, expect } from '@playwright/test'
 
 test('Charites Live Preview', async ({ page }) => {
   // collect errors on the page
