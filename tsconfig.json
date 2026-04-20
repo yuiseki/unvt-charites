@@ -16,12 +16,9 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "module": "Preserve",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "outDir": "./dist",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["node_modules/*", "src/types/*"]
-    },
+    "rootDir": "./src",
     "types": [
       "mocha",
       "chai",
