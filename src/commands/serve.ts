@@ -131,7 +131,11 @@ export async function serve(source: string, options: serveOptions) {
           {
             hostname: 'localhost',
             port: vitePort,
-            path: url,
+            // Forward the original URL including its query string. Vite relies
+            // on query suffixes such as `?url`, `?worker&url`, and `?v=<hash>`
+            // to decide what to return; the route-matching `url` above has the
+            // query stripped, so proxying it would break those requests.
+            path: req.url || url,
             method: req.method,
             headers: req.headers,
           },

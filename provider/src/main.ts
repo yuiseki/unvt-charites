@@ -6,7 +6,10 @@ import {
   addProtocol,
   IControl,
   GlobeControl,
+  setWorkerUrl,
 } from 'maplibre-gl'
+import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
+setWorkerUrl(workerUrl)
 import 'maplibre-gl/dist/maplibre-gl.css'
 import '@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css'
 import MaplibreInspect from '@maplibre/maplibre-gl-inspect'
@@ -87,11 +90,9 @@ class Charites {
   }
 
   setupDebugCheckbox = (map: Map) => {
-    const properties = [
-      'showTileBoundaries',
-      'showCollisionBoxes',
-      'showPadding',
-    ]
+    const properties: Array<
+      'showTileBoundaries' | 'showCollisionBoxes' | 'showPadding'
+    > = ['showTileBoundaries', 'showCollisionBoxes', 'showPadding']
     for (const property of properties) {
       const control = document.getElementById(property) as HTMLInputElement
       const clickHandler = () => {
