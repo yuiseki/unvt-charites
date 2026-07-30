@@ -90,11 +90,9 @@ class Charites {
   }
 
   setupDebugCheckbox = (map: Map) => {
-    const properties = [
-      'showTileBoundaries',
-      'showCollisionBoxes',
-      'showPadding',
-    ]
+    const properties: Array<
+      'showTileBoundaries' | 'showCollisionBoxes' | 'showPadding'
+    > = ['showTileBoundaries', 'showCollisionBoxes', 'showPadding']
     for (const property of properties) {
       const control = document.getElementById(property) as HTMLInputElement
       const clickHandler = () => {
