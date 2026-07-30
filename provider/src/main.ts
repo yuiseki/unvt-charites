@@ -6,7 +6,10 @@ import {
   addProtocol,
   IControl,
   GlobeControl,
+  setWorkerUrl,
 } from 'maplibre-gl'
+import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
+setWorkerUrl(workerUrl)
 import 'maplibre-gl/dist/maplibre-gl.css'
 import '@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css'
 import MaplibreInspect from '@maplibre/maplibre-gl-inspect'
